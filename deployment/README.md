@@ -38,6 +38,14 @@ Remember that port numbers must be unique. Use the designated port numbers for y
 
 Start the deployment server with `forever start server.js`
 
+## Cache credentials
+On your deployment server, run `git config --global credential.helper 'cache --timeout=3600000'`
+
+Then run a `git pull`
+
+This will cache your password for the amount of seconds.
+ 
+
 ## Configure github or bitbucket
 The `server.js` is configured fot github. It does work out of the box for github. It does _not_ work for bitbucket out of the box. Although the same principle, bitbucket sends a JSON-like string that is not a JSON. You have to figure that out (should be easy).
 
